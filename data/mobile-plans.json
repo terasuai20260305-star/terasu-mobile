@@ -1,4 +1,5 @@
 {
+  "last_updated": "2026-03-26",
   "plans": [
     {
       "provider_name": "ドコモ",
@@ -20,7 +21,23 @@
         "ライトユーザーには割高",
         "2年契約の縛りがある場合がある"
       ],
-      "official_url": "https://www.docomo.ne.jp/charge/eximo/"
+      "official_url": "https://www.docomo.ne.jp/charge/eximo/",
+      "campaigns": [
+        {
+          "name": "eximo お試しキャンペーン",
+          "type": "point",
+          "amount": 3000,
+          "duration_months": 1,
+          "end_date": null,
+          "conditions": "新規・MNP契約"
+        }
+      ],
+      "point_site": {
+        "site_name": "ハピタス",
+        "reward": 3000,
+        "url": "https://hapitas.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "ドコモ",
@@ -42,7 +59,23 @@
         "データ超過後は300kbpsに制限",
         "家族割のカウント対象外"
       ],
-      "official_url": "https://www.docomo.ne.jp/charge/irumo/"
+      "official_url": "https://www.docomo.ne.jp/charge/irumo/",
+      "campaigns": [
+        {
+          "name": "irumo オンライン限定 dポイント進呈",
+          "type": "point",
+          "amount": 3300,
+          "duration_months": 1,
+          "end_date": null,
+          "conditions": "他社からのMNP"
+        }
+      ],
+      "point_site": {
+        "site_name": "ハピタス",
+        "reward": 2000,
+        "url": "https://hapitas.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "au",
@@ -64,7 +97,23 @@
         "テザリングは30GB上限あり",
         "格安SIMと比べると割高"
       ],
-      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-unlimited-max/"
+      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-unlimited-max/",
+      "campaigns": [
+        {
+          "name": "au Online Shop お得割",
+          "type": "discount",
+          "amount": 22000,
+          "duration_months": 1,
+          "end_date": null,
+          "conditions": "MNP + 対象端末購入"
+        }
+      ],
+      "point_site": {
+        "site_name": "モッピー",
+        "reward": 5000,
+        "url": "https://moppy.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "au",
@@ -86,7 +135,14 @@
         "割引がないとコスパが悪い",
         "格安SIMと比べると割高"
       ],
-      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-smahomini/"
+      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-smahomini/",
+      "campaigns": [],
+      "point_site": {
+        "site_name": "モッピー",
+        "reward": 3000,
+        "url": "https://moppy.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "ソフトバンク",
@@ -108,7 +164,23 @@
         "3GB以下でも自動割引は1,650円のみ",
         "格安SIMと比べると大幅に割高"
       ],
-      "official_url": "https://www.softbank.jp/mobile/price-plan/meriharimuseigen-plus/"
+      "official_url": "https://www.softbank.jp/mobile/price-plan/meriharimuseigen-plus/",
+      "campaigns": [
+        {
+          "name": "オンラインショップ割",
+          "type": "discount",
+          "amount": 21984,
+          "duration_months": 1,
+          "end_date": null,
+          "conditions": "MNP + 対象端末購入"
+        }
+      ],
+      "point_site": {
+        "site_name": "ハピタス",
+        "reward": 4000,
+        "url": "https://hapitas.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "ソフトバンク",
@@ -130,7 +202,9 @@
         "家族割はカウントのみで割引なし",
         "格安SIMと比べると割高"
       ],
-      "official_url": "https://www.softbank.jp/mobile/price-plan/minifitplan-plus/"
+      "official_url": "https://www.softbank.jp/mobile/price-plan/minifitplan-plus/",
+      "campaigns": [],
+      "point_site": null
     },
     {
       "provider_name": "楽天モバイル",
@@ -153,7 +227,29 @@
         "対面サポート店舗が大手3社より少ない",
         "パートナー回線エリアでは速度制限あり"
       ],
-      "official_url": "https://network.mobile.rakuten.co.jp/fee/saikyo-plan/"
+      "official_url": "https://network.mobile.rakuten.co.jp/fee/saikyo-plan/",
+      "campaigns": [
+        {
+          "name": "楽天ポイント最大13,000pt還元",
+          "type": "point",
+          "amount": 13000,
+          "end_date": null,
+          "conditions": "初めての申し込み + Rakuten Link利用"
+        },
+        {
+          "name": "三木谷キャンペーン（紹介）",
+          "type": "point",
+          "amount": 14000,
+          "end_date": null,
+          "conditions": "紹介URL経由での申し込み"
+        }
+      ],
+      "point_site": {
+        "site_name": "ハピタス",
+        "reward": 5000,
+        "url": "https://hapitas.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "IIJmio",
@@ -175,7 +271,31 @@
         "対面サポートがほぼない",
         "通話料は別途11円/30秒"
       ],
-      "official_url": "https://www.iijmio.jp/gigaplan/"
+      "official_url": "https://www.iijmio.jp/gigaplan/",
+      "campaigns": [
+        {
+          "name": "月額料金割引（6ヶ月間）",
+          "type": "discount",
+          "amount": 440,
+          "duration_months": 6,
+          "end_date": "2026-05-31",
+          "conditions": "新規・MNP"
+        },
+        {
+          "name": "初期費用割引",
+          "type": "discount",
+          "amount": 1650,
+          "duration_months": 1,
+          "end_date": "2026-05-31",
+          "conditions": "新規・MNP"
+        }
+      ],
+      "point_site": {
+        "site_name": "モッピー",
+        "reward": 2000,
+        "url": "https://moppy.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "IIJmio",
@@ -197,7 +317,31 @@
         "対面サポートがほぼない",
         "通話料は別途11円/30秒"
       ],
-      "official_url": "https://www.iijmio.jp/gigaplan/"
+      "official_url": "https://www.iijmio.jp/gigaplan/",
+      "campaigns": [
+        {
+          "name": "月額料金割引（6ヶ月間）",
+          "type": "discount",
+          "amount": 440,
+          "duration_months": 6,
+          "end_date": "2026-05-31",
+          "conditions": "新規・MNP"
+        },
+        {
+          "name": "初期費用割引",
+          "type": "discount",
+          "amount": 1650,
+          "duration_months": 1,
+          "end_date": "2026-05-31",
+          "conditions": "新規・MNP"
+        }
+      ],
+      "point_site": {
+        "site_name": "モッピー",
+        "reward": 2000,
+        "url": "https://moppy.jp/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "mineo",
@@ -219,7 +363,23 @@
         "対面サポート店舗が少ない",
         "通話料は別途22円/30秒"
       ],
-      "official_url": "https://mineo.jp/price/"
+      "official_url": "https://mineo.jp/price/",
+      "campaigns": [
+        {
+          "name": "マイピタまるっと990円キャンペーン",
+          "type": "discount",
+          "amount": 528,
+          "duration_months": 6,
+          "end_date": "2026-06-03",
+          "conditions": "新規・MNP"
+        }
+      ],
+      "point_site": {
+        "site_name": "価格.com",
+        "reward": 3000,
+        "url": "https://kakaku.com/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "mineo",
@@ -241,7 +401,14 @@
         "平日12時台は32kbpsに制限",
         "高画質動画やオンラインゲームには不向き"
       ],
-      "official_url": "https://mineo.jp/price/mysoku/"
+      "official_url": "https://mineo.jp/price/mysoku/",
+      "campaigns": [],
+      "point_site": {
+        "site_name": "価格.com",
+        "reward": 2000,
+        "url": "https://kakaku.com/",
+        "last_updated": "2026-03-26"
+      }
     },
     {
       "provider_name": "OCNモバイルONE",
@@ -264,7 +431,9 @@
         "対面サポートが限定的",
         "新規申し込みは不可"
       ],
-      "official_url": "https://www.ntt.com/personal/services/mobile/one.html"
+      "official_url": "https://www.ntt.com/personal/services/mobile/one.html",
+      "campaigns": [],
+      "point_site": null
     },
     {
       "provider_name": "OCNモバイルONE",
@@ -287,7 +456,9 @@
         "対面サポートが限定的",
         "新規申し込みは不可"
       ],
-      "official_url": "https://www.ntt.com/personal/services/mobile/one.html"
+      "official_url": "https://www.ntt.com/personal/services/mobile/one.html",
+      "campaigns": [],
+      "point_site": null
     }
   ]
 }

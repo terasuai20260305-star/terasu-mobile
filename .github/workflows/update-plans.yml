@@ -1,0 +1,88 @@
+# 携帯プラン情報の自動更新ワークフロー
+#
+# 1日1回（深夜3時）にキャリア・ポイントサイトのスクショを取得し、
+# Claude Vision APIで構造化データを抽出、バリデーション後に更新する。
+#
+# ⚠️ 現在は設計段階のため、手動トリガーのみ有効。
+# 本番運用時に schedule のコメントアウトを外す。
+
+name: Update Mobile Plans
+
+on:
+  # schedule:
+  #   - cron: "0 18 * * *"  # UTC 18:00 = JST 03:00
+  workflow_dispatch:  # 手動実行
+
+# permissions:
+#   contents: write
+
+jobs:
+  update-plans:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install -D playwright @anthropic-ai/sdk tsx
+          npx playwright install chromium --with-deps
+
+      - name: Take screenshots
+        run: npx tsx scripts/scraper/screenshot.ts
+
+      - name: Extract data with Claude Vision
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx tsx scripts/scraper/extract.ts
+
+      - name: Validate and check diff
+        id: validate
+        run: |
+          npx tsx scripts/scraper/validate-and-update.ts
+        continue-on-error: true
+
+      - name: Upload screenshots as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots-${{ github.run_number }}
+          path: data/screenshots/
+          retention-days: 7
+
+      - name: Upload extraction results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extraction-${{ github.run_number }}
+          path: data/extracted/
+          retention-days: 30
+
+      # 自動コミット（バリデーション通過時のみ）
+      # - name: Commit and push
+      #   if: steps.validate.outcome == 'success'
+      #   run: |
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "github-actions[bot]@users.noreply.github.com"
+      #     git add data/mobile-plans.json
+      #     git diff --staged --quiet || git commit -m "chore: auto-update mobile plans data"
+      #     git push
+
+      # 人間確認が必要な場合の通知（将来実装）
+      # - name: Notify for review
+      #   if: steps.validate.outcome == 'failure' && steps.validate.outputs.exit_code == '2'
+      #   uses: slackapi/slack-github-action@v1
+      #   with:
+      #     payload: |
+      #       {"text": "🔔 携帯プランの大幅な変更を検出しました。確認が必要です。"}
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

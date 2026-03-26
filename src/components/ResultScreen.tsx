@@ -9,19 +9,10 @@ interface ResultScreenProps {
   onRetry: () => void;
 }
 
-function getCampaignText(providerName: string): string | null {
-  switch (providerName) {
-    case "楽天モバイル": return "楽天ポイント最大13,000pt還元";
-    case "IIJmio": return "初期費用割引・端末セール";
-    case "mineo": return "月額料金割引キャンペーン";
-    default: return null;
-  }
-}
-
 export default function ResultScreen({ result, input, onRetry }: ResultScreenProps) {
   const [detailOpen, setDetailOpen] = useState(false);
 
-  // C-2: 推薦なし
+  // 推薦なし
   if ("no_recommendation" in result) {
     return (
       <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-green-50 px-4">
@@ -61,8 +52,21 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
     );
   }
 
-  const { recommended_plan, monthly_saving, annual_saving, reasons, cautions, not_recommended_if, note, second_plan } = result;
-  const campaign = getCampaignText(recommended_plan.provider_name);
+  const {
+    recommended_plan,
+    monthly_saving,
+    annual_saving,
+    first_year_total_benefit,
+    reasons,
+    cautions,
+    not_recommended_if,
+    note,
+    second_plan,
+  } = result;
+
+  const campaigns = recommended_plan.campaigns || [];
+  const pointSite = recommended_plan.point_site;
+  const hasBonuses = campaigns.length > 0 || pointSite;
 
   return (
     <div className="min-h-[100dvh] bg-white pb-8">
@@ -85,7 +89,7 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
 
         <div className="my-3 border-t border-gray-100" />
 
-        {/* 節約額ブロック */}
+        {/* 月額節約ブロック */}
         <div className="flex items-center justify-between rounded-xl bg-green-50 p-3">
           <div>
             <p className="text-xs text-gray-500">今より毎月</p>
@@ -100,6 +104,20 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
             <p className="text-lg font-bold text-green-600">{annual_saving.toLocaleString()}円</p>
           </div>
         </div>
+
+        {/* 初年度トータルお得額（キャンペーン等込み） */}
+        {hasBonuses && first_year_total_benefit > annual_saving && (
+          <div className="mt-2 rounded-xl bg-gradient-to-r from-orange-50 to-yellow-50 p-3">
+            <p className="text-xs text-orange-600 font-medium">🎁 初年度トータルお得額（特典込み）</p>
+            <p className="mt-0.5 text-2xl font-bold text-orange-600">
+              {first_year_total_benefit.toLocaleString()}
+              <span className="text-sm">円相当</span>
+            </p>
+            <p className="mt-0.5 text-[10px] text-gray-400">
+              月額節約 + キャンペーン + ポイントサイト還元の合計
+            </p>
+          </div>
+        )}
 
         <div className="my-3 border-t border-gray-100" />
 
@@ -126,7 +144,74 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
         </div>
       </div>
 
-      {/* ③ CTAボタン */}
+      {/* ③ キャンペーン情報カード */}
+      {campaigns.length > 0 && (
+        <div className="mx-4 mt-4">
+          <div className="rounded-2xl border border-yellow-200 bg-yellow-50 p-4">
+            <p className="text-sm font-bold text-gray-800">🎁 現在のキャンペーン</p>
+            <div className="mt-2 space-y-2">
+              {campaigns.map((c, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0 text-xs">
+                    {c.type === "point" ? "🔵" : c.type === "cashback" ? "💰" : "✂️"}
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-800">
+                      {c.name}
+                      <span className="ml-1 text-sm font-bold text-orange-600">
+                        {c.type === "discount" && c.duration_months
+                          ? `${c.amount.toLocaleString()}円×${c.duration_months}ヶ月`
+                          : `${c.amount.toLocaleString()}円相当`}
+                      </span>
+                    </p>
+                    <p className="text-[11px] text-gray-400">
+                      条件: {c.conditions}
+                      {c.end_date && ` ／ 〜${c.end_date}`}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-[10px] text-gray-400">
+              ※ キャンペーン内容は予告なく変更される場合があります
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* ④ ポイントサイト還元カード */}
+      {pointSite && (
+        <div className="mx-4 mt-3">
+          <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+            <p className="text-sm font-bold text-gray-800">💎 ポイントサイト経由でさらにお得</p>
+            <div className="mt-2 flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-700">
+                  <span className="font-semibold">{pointSite.site_name}</span>
+                  経由で申し込むと
+                </p>
+                <p className="text-xl font-bold text-blue-600">
+                  +{pointSite.reward.toLocaleString()}
+                  <span className="text-sm">円還元</span>
+                </p>
+              </div>
+              <a
+                href={pointSite.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 rounded-lg bg-blue-600 px-3 py-2 text-xs font-bold text-white transition-all active:scale-[0.98]"
+              >
+                サイトを見る →
+              </a>
+            </div>
+            <p className="mt-1.5 text-[10px] text-gray-400">
+              ※ 還元額は{pointSite.last_updated}時点の情報です。申込前にご確認ください
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* ⑤ CTAボタン */}
       <div className="mx-4 mt-4">
         <a
           href={recommended_plan.official_url}
@@ -136,15 +221,17 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
         >
           {recommended_plan.provider_name}の公式サイトを確認する →
         </a>
-        <p className="mt-1 text-center text-[10px] text-gray-400">
-          ※ 申し込みは各社公式サイトで行います
-        </p>
+        {pointSite && (
+          <p className="mt-1 text-center text-[10px] text-orange-500 font-medium">
+            💡 {pointSite.site_name}に登録してから申し込むとさらに{pointSite.reward.toLocaleString()}円お得！
+          </p>
+        )}
         <p className="mt-0.5 text-center text-[10px] text-gray-400">
-          ※ このリンクは紹介リンクです（広告）
+          ※ 申し込みは各社公式サイトで行います
         </p>
       </div>
 
-      {/* ④ 詳細折りたたみ */}
+      {/* ⑥ 詳細折りたたみ */}
       <div className="mx-4 mt-4">
         <button
           onClick={() => setDetailOpen(!detailOpen)}
@@ -155,25 +242,42 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
 
         {detailOpen && (
           <div className="animate-fadeIn mt-2 space-y-3 rounded-xl bg-gray-50 p-4">
-            {/* 年間節約額 */}
-            <p className="text-center text-base font-semibold text-green-600">
-              年間節約額 {annual_saving.toLocaleString()}円
-            </p>
-
-            {/* 初年度キャンペーン */}
-            {campaign && (
-              <div className="rounded-lg bg-yellow-50 p-3">
-                <p className="text-sm font-semibold text-gray-700">
-                  🎁 初年度キャンペーン +{campaign}相当
-                </p>
-                <p className="mt-1 text-[10px] text-gray-400">
-                  ※ 初年度のみ。内容は予告なく変更される場合があります。
-                </p>
+            {/* お得額内訳 */}
+            {hasBonuses && (
+              <div>
+                <p className="text-sm font-semibold text-gray-700">💰 初年度お得額の内訳</p>
+                <div className="mt-1.5 space-y-1 text-sm text-gray-600">
+                  <div className="flex justify-between">
+                    <span>月額節約 × 12ヶ月</span>
+                    <span className="font-medium">{annual_saving.toLocaleString()}円</span>
+                  </div>
+                  {campaigns.map((c, i) => (
+                    <div key={i} className="flex justify-between">
+                      <span className="truncate mr-2">{c.name}</span>
+                      <span className="shrink-0 font-medium">
+                        {c.type === "discount" && c.duration_months
+                          ? `${(c.amount * c.duration_months).toLocaleString()}円`
+                          : `${c.amount.toLocaleString()}円`}
+                      </span>
+                    </div>
+                  ))}
+                  {pointSite && (
+                    <div className="flex justify-between">
+                      <span>{pointSite.site_name}還元</span>
+                      <span className="font-medium">{pointSite.reward.toLocaleString()}円</span>
+                    </div>
+                  )}
+                  <div className="border-t border-gray-200 pt-1 flex justify-between font-bold text-green-600">
+                    <span>合計</span>
+                    <span>{first_year_total_benefit.toLocaleString()}円</span>
+                  </div>
+                </div>
               </div>
             )}
 
             {/* プラン基本情報 */}
             <div className="space-y-1 text-sm text-gray-600">
+              <p className="font-semibold text-gray-700">📋 プラン情報</p>
               <div className="flex justify-between">
                 <span>月額</span>
                 <span>{recommended_plan.monthly_fee_base.toLocaleString()}円（税込）</span>
@@ -204,7 +308,7 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
         )}
       </div>
 
-      {/* ⑤ 他の選択肢 */}
+      {/* ⑦ 他の選択肢 */}
       {second_plan && (
         <div className="mx-4 mt-4">
           <p className="text-sm font-semibold text-gray-500">他の選択肢</p>
@@ -220,7 +324,7 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
         </div>
       )}
 
-      {/* ⑥ やり直しボタン */}
+      {/* ⑧ やり直しボタン */}
       <div className="mx-4 mt-6">
         <button
           onClick={onRetry}
@@ -229,6 +333,11 @@ export default function ResultScreen({ result, input, onRetry }: ResultScreenPro
           ← 条件を変えてやり直す
         </button>
       </div>
+
+      {/* データ更新日 */}
+      <p className="mt-4 text-center text-[10px] text-gray-300">
+        データ更新日: {recommended_plan.point_site?.last_updated || "2026-03-26"}
+      </p>
     </div>
   );
 }

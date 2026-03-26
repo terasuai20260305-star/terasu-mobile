@@ -16,7 +16,6 @@ const CARRIER_TO_PROVIDER: Record<string, string[]> = {
   わからない: [],
 };
 
-// D-2改善: より現実的な基準月額（税込）
 const ESTIMATED_CURRENT_FEE: Record<string, Record<DataUsage, number>> = {
   ドコモ: { light: 2167, medium: 7315, heavy: 7315, unknown: 7315 },
   au: { light: 3278, medium: 7238, heavy: 7238, unknown: 7238 },
@@ -28,14 +27,10 @@ const ESTIMATED_CURRENT_FEE: Record<string, Record<DataUsage, number>> = {
 
 function requiredGb(usage: DataUsage): number | null {
   switch (usage) {
-    case "light":
-      return 3;
-    case "medium":
-      return 20;
-    case "heavy":
-      return null;
-    case "unknown":
-      return 20;
+    case "light": return 3;
+    case "medium": return 20;
+    case "heavy": return null;
+    case "unknown": return 20;
   }
 }
 
@@ -80,6 +75,49 @@ function scorePlan(
   return effectiveFee;
 }
 
+/**
+ * 初年度トータルお得額を計算
+ * = 月額節約 × 12 + キャンペーン特典合計 + ポイントサイト還元
+ */
+function calcFirstYearBenefit(
+  plan: MobilePlan,
+  monthlySaving: number
+): number {
+  let total = monthlySaving * 12;
+
+  // キャンペーン特典
+  for (const c of plan.campaigns) {
+    if (c.type === "discount" && c.duration_months) {
+      total += c.amount * c.duration_months;
+    } else {
+      // point, cashback, or one-time discount
+      total += c.amount;
+    }
+  }
+
+  // ポイントサイト還元（最高額のもの）
+  if (plan.point_site) {
+    total += plan.point_site.reward;
+  }
+
+  return total;
+}
+
+/**
+ * キャンペーン特典の合計額（一時金換算）
+ */
+function calcCampaignTotal(plan: MobilePlan): number {
+  let total = 0;
+  for (const c of plan.campaigns) {
+    if (c.type === "discount" && c.duration_months) {
+      total += c.amount * c.duration_months;
+    } else {
+      total += c.amount;
+    }
+  }
+  return total;
+}
+
 function generateReasons(
   plan: MobilePlan,
   input: DiagnosisInput,
@@ -111,7 +149,13 @@ function generateReasons(
     reasons.push("格安SIMの中でも利用者満足度が高いサービスです");
   }
 
-  return reasons.slice(0, 3);
+  // キャンペーン特典がある場合
+  const campaignTotal = calcCampaignTotal(plan);
+  if (campaignTotal > 0) {
+    reasons.push(`キャンペーン特典で${campaignTotal.toLocaleString()}円相当もお得です`);
+  }
+
+  return reasons.slice(0, 4);
 }
 
 function generateCautions(plan: MobilePlan): string[] {
@@ -191,7 +235,6 @@ export function recommend(input: DiagnosisInput): RecommendResult {
     ...(CARRIER_TO_PROVIDER[input.current_carrier] || []),
   ];
 
-  // is_recommendable=falseのプランも除外
   const candidates = allPlans.filter(
     (plan) =>
       plan.is_recommendable &&
@@ -230,11 +273,13 @@ export function recommend(input: DiagnosisInput): RecommendResult {
     };
   }
 
-  // D-2: 全て「わからない」の場合のnote
   const isAllUnknown =
     input.current_carrier === "わからない" &&
     input.data_usage === "unknown" &&
     input.has_family_discount === null;
+
+  // 初年度トータルお得額
+  const firstYearTotalBenefit = calcFirstYearBenefit(best.plan, monthlySaving);
 
   // 2番目の候補
   let secondPlan: RecommendationResult["second_plan"] = undefined;
@@ -255,6 +300,7 @@ export function recommend(input: DiagnosisInput): RecommendResult {
     recommended_plan: best.plan,
     monthly_saving: monthlySaving,
     annual_saving: monthlySaving * 12,
+    first_year_total_benefit: firstYearTotalBenefit,
     reasons: generateReasons(best.plan, input, monthlySaving),
     cautions: generateCautions(best.plan),
     not_recommended_if: generateNotRecommendedIf(best.plan),
