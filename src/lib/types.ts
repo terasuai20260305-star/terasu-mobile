@@ -1,0 +1,41 @@
+export interface MobilePlan {
+  provider_name: string;
+  plan_name: string;
+  monthly_fee_base: number;
+  data_allowance_gb: number | null;
+  unlimited_data: boolean;
+  family_discount_available: boolean;
+  family_discount_amount: number;
+  set_discount_available: boolean;
+  features: string[];
+  demerits: string[];
+  official_url: string;
+}
+
+export interface MobilePlansData {
+  plans: MobilePlan[];
+}
+
+export type DataUsage = "light" | "medium" | "heavy" | "unknown";
+
+export interface DiagnosisInput {
+  current_carrier: string;
+  data_usage: DataUsage;
+  has_family_discount: boolean | null;
+}
+
+export interface RecommendationResult {
+  recommended_plan: MobilePlan;
+  monthly_saving: number;
+  annual_saving: number;
+  reasons: string[];
+  cautions: string[];
+  not_recommended_if: string[];
+}
+
+export interface NoRecommendationResult {
+  no_recommendation: true;
+  message: string;
+}
+
+export type RecommendResult = RecommendationResult | NoRecommendationResult;

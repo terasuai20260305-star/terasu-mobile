@@ -1,0 +1,278 @@
+{
+  "plans": [
+    {
+      "provider_name": "ドコモ",
+      "plan_name": "eximo",
+      "monthly_fee_base": 7315,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "family_discount_available": true,
+      "family_discount_amount": 1100,
+      "set_discount_available": true,
+      "features": [
+        "データ無制限で使い放題",
+        "ドコモショップで対面サポートあり",
+        "dポイント還元率が高い"
+      ],
+      "demerits": [
+        "月額料金が高め",
+        "割引なしだと7,315円/月",
+        "ライトユーザーには割高"
+      ],
+      "official_url": "https://www.docomo.ne.jp/charge/eximo/"
+    },
+    {
+      "provider_name": "ドコモ",
+      "plan_name": "irumo（3GB）",
+      "monthly_fee_base": 2167,
+      "data_allowance_gb": 3,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": true,
+      "features": [
+        "ドコモ回線の安定した通信品質",
+        "ドコモショップで対面サポートあり",
+        "dカード支払いで187円割引"
+      ],
+      "demerits": [
+        "ドコモ光セット割がないと割高",
+        "データ超過後は300kbpsに制限",
+        "家族割のカウント対象外"
+      ],
+      "official_url": "https://www.docomo.ne.jp/charge/irumo/"
+    },
+    {
+      "provider_name": "au",
+      "plan_name": "使い放題MAX 5G/4G",
+      "monthly_fee_base": 7238,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "family_discount_available": true,
+      "family_discount_amount": 1100,
+      "set_discount_available": true,
+      "features": [
+        "データ無制限で使い放題",
+        "テザリング30GBまで無料",
+        "auショップで対面サポートあり"
+      ],
+      "demerits": [
+        "月額料金が高め",
+        "割引なしだと7,238円/月",
+        "テザリングは30GB上限あり"
+      ],
+      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-unlimited-max/"
+    },
+    {
+      "provider_name": "au",
+      "plan_name": "スマホミニプラン 5G/4G（〜4GB）",
+      "monthly_fee_base": 3278,
+      "data_allowance_gb": 4,
+      "unlimited_data": false,
+      "family_discount_available": true,
+      "family_discount_amount": 550,
+      "set_discount_available": true,
+      "features": [
+        "使った分だけの段階制料金",
+        "au回線の安定した通信品質",
+        "auショップで対面サポートあり"
+      ],
+      "demerits": [
+        "4GB以上使うと割高になる",
+        "割引がないとコスパが悪い",
+        "格安SIMと比べると割高"
+      ],
+      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-smahomini/"
+    },
+    {
+      "provider_name": "ソフトバンク",
+      "plan_name": "メリハリ無制限+",
+      "monthly_fee_base": 7425,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "family_discount_available": true,
+      "family_discount_amount": 1210,
+      "set_discount_available": true,
+      "features": [
+        "データ無制限で使い放題",
+        "テザリング50GBまで無料",
+        "PayPayポイント還元あり"
+      ],
+      "demerits": [
+        "月額料金が3キャリアで最も高い",
+        "割引なしだと7,425円/月",
+        "3GB以下でも自動割引は1,650円のみ"
+      ],
+      "official_url": "https://www.softbank.jp/mobile/price-plan/meriharimuseigen-plus/"
+    },
+    {
+      "provider_name": "ソフトバンク",
+      "plan_name": "ミニフィットプラン+（〜3GB）",
+      "monthly_fee_base": 3278,
+      "data_allowance_gb": 3,
+      "unlimited_data": false,
+      "family_discount_available": true,
+      "family_discount_amount": 0,
+      "set_discount_available": true,
+      "features": [
+        "使った分だけの段階制料金",
+        "1GB以下なら2,178円で使える",
+        "ソフトバンクショップで対面サポートあり"
+      ],
+      "demerits": [
+        "3GB超えるとメリハリ無制限+の方が得",
+        "家族割はカウントのみで割引なし",
+        "格安SIMと比べると割高"
+      ],
+      "official_url": "https://www.softbank.jp/mobile/price-plan/minifitplan-plus/"
+    },
+    {
+      "provider_name": "楽天モバイル",
+      "plan_name": "Rakuten最強プラン",
+      "monthly_fee_base": 3278,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "family_discount_available": true,
+      "family_discount_amount": 110,
+      "set_discount_available": false,
+      "features": [
+        "データ無制限で3,278円",
+        "3GBまでなら1,078円",
+        "Rakuten Linkアプリで国内通話無料",
+        "契約期間の縛りなし"
+      ],
+      "demerits": [
+        "地下やビル内で繋がりにくい場合がある",
+        "対面サポート店舗が大手3社より少ない",
+        "パートナー回線エリアでは速度制限あり"
+      ],
+      "official_url": "https://network.mobile.rakuten.co.jp/fee/saikyo-plan/"
+    },
+    {
+      "provider_name": "IIJmio",
+      "plan_name": "ギガプラン（5GB）",
+      "monthly_fee_base": 990,
+      "data_allowance_gb": 5,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "features": [
+        "5GBで月990円の業界最安水準",
+        "余ったデータは翌月繰り越し",
+        "eSIM対応で即日開通可能"
+      ],
+      "demerits": [
+        "昼12時台は通信速度が低下しやすい",
+        "対面サポートがほぼない",
+        "通話料は別途11円/30秒"
+      ],
+      "official_url": "https://www.iijmio.jp/gigaplan/"
+    },
+    {
+      "provider_name": "IIJmio",
+      "plan_name": "ギガプラン（20GB）",
+      "monthly_fee_base": 2000,
+      "data_allowance_gb": 20,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "features": [
+        "20GBで月2,000円の高コスパ",
+        "余ったデータは翌月繰り越し",
+        "eSIM対応で即日開通可能"
+      ],
+      "demerits": [
+        "昼12時台は通信速度が低下しやすい",
+        "対面サポートがほぼない",
+        "通話料は別途11円/30秒"
+      ],
+      "official_url": "https://www.iijmio.jp/gigaplan/"
+    },
+    {
+      "provider_name": "mineo",
+      "plan_name": "マイピタ（5GB）",
+      "monthly_fee_base": 1518,
+      "data_allowance_gb": 5,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "features": [
+        "ドコモ・au・ソフトバンク回線から選べる",
+        "フリータンクでデータシェア可能",
+        "コミュニティサポートが充実"
+      ],
+      "demerits": [
+        "昼12時台は通信速度が低下しやすい",
+        "対面サポート店舗が少ない",
+        "通話料は別途22円/30秒"
+      ],
+      "official_url": "https://mineo.jp/price/"
+    },
+    {
+      "provider_name": "mineo",
+      "plan_name": "マイそく（スタンダード）",
+      "monthly_fee_base": 990,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "features": [
+        "月990円でデータ使い放題",
+        "最大1.5Mbpsで動画視聴も可能",
+        "ドコモ・au・ソフトバンク回線対応"
+      ],
+      "demerits": [
+        "最大速度が1.5Mbpsに制限される",
+        "平日12時台は32kbpsに制限",
+        "高画質動画やオンラインゲームには不向き"
+      ],
+      "official_url": "https://mineo.jp/price/mysoku/"
+    },
+    {
+      "provider_name": "OCNモバイルONE",
+      "plan_name": "3GBコース",
+      "monthly_fee_base": 990,
+      "data_allowance_gb": 3,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "features": [
+        "ドコモ回線でMVNO最速クラス",
+        "MUSICカウントフリーで音楽聴き放題",
+        "初月無料"
+      ],
+      "demerits": [
+        "2023年7月に新規受付終了済み",
+        "今後のサービス拡充は期待しにくい",
+        "対面サポートが限定的"
+      ],
+      "official_url": "https://www.ntt.com/personal/services/mobile/one.html"
+    },
+    {
+      "provider_name": "OCNモバイルONE",
+      "plan_name": "10GBコース",
+      "monthly_fee_base": 1760,
+      "data_allowance_gb": 10,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "features": [
+        "ドコモ回線でMVNO最速クラス",
+        "MUSICカウントフリーで音楽聴き放題",
+        "余ったデータは翌月繰り越し"
+      ],
+      "demerits": [
+        "2023年7月に新規受付終了済み",
+        "今後のサービス拡充は期待しにくい",
+        "対面サポートが限定的"
+      ],
+      "official_url": "https://www.ntt.com/personal/services/mobile/one.html"
+    }
+  ]
+}
