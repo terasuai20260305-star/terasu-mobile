@@ -115,6 +115,7 @@ export default function DiagnosisFlow({ onComplete }: DiagnosisFlowProps) {
           }}
         >
           <QuestionCard
+            key={currentStep}
             questionNumber={currentStep + 1}
             question={q.question}
             subtitle={"subtitle" in q ? q.subtitle : undefined}
