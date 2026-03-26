@@ -9,15 +9,16 @@
       "family_discount_available": true,
       "family_discount_amount": 1100,
       "set_discount_available": true,
+      "is_recommendable": true,
       "features": [
         "データ無制限で使い放題",
         "ドコモショップで対面サポートあり",
         "dポイント還元率が高い"
       ],
       "demerits": [
-        "月額料金が高め",
-        "割引なしだと7,315円/月",
-        "ライトユーザーには割高"
+        "月額料金が高め（割引なしで7,315円/月）",
+        "ライトユーザーには割高",
+        "2年契約の縛りがある場合がある"
       ],
       "official_url": "https://www.docomo.ne.jp/charge/eximo/"
     },
@@ -30,6 +31,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": true,
+      "is_recommendable": true,
       "features": [
         "ドコモ回線の安定した通信品質",
         "ドコモショップで対面サポートあり",
@@ -51,15 +53,16 @@
       "family_discount_available": true,
       "family_discount_amount": 1100,
       "set_discount_available": true,
+      "is_recommendable": true,
       "features": [
         "データ無制限で使い放題",
         "テザリング30GBまで無料",
         "auショップで対面サポートあり"
       ],
       "demerits": [
-        "月額料金が高め",
-        "割引なしだと7,238円/月",
-        "テザリングは30GB上限あり"
+        "月額料金が高め（割引なしで7,238円/月）",
+        "テザリングは30GB上限あり",
+        "格安SIMと比べると割高"
       ],
       "official_url": "https://www.au.com/mobile/charge/smartphone/plan-unlimited-max/"
     },
@@ -72,6 +75,7 @@
       "family_discount_available": true,
       "family_discount_amount": 550,
       "set_discount_available": true,
+      "is_recommendable": true,
       "features": [
         "使った分だけの段階制料金",
         "au回線の安定した通信品質",
@@ -93,15 +97,16 @@
       "family_discount_available": true,
       "family_discount_amount": 1210,
       "set_discount_available": true,
+      "is_recommendable": true,
       "features": [
         "データ無制限で使い放題",
         "テザリング50GBまで無料",
         "PayPayポイント還元あり"
       ],
       "demerits": [
-        "月額料金が3キャリアで最も高い",
-        "割引なしだと7,425円/月",
-        "3GB以下でも自動割引は1,650円のみ"
+        "月額料金が3キャリアで最も高い（7,425円/月）",
+        "3GB以下でも自動割引は1,650円のみ",
+        "格安SIMと比べると大幅に割高"
       ],
       "official_url": "https://www.softbank.jp/mobile/price-plan/meriharimuseigen-plus/"
     },
@@ -114,6 +119,7 @@
       "family_discount_available": true,
       "family_discount_amount": 0,
       "set_discount_available": true,
+      "is_recommendable": true,
       "features": [
         "使った分だけの段階制料金",
         "1GB以下なら2,178円で使える",
@@ -135,9 +141,10 @@
       "family_discount_available": true,
       "family_discount_amount": 110,
       "set_discount_available": false,
+      "is_recommendable": true,
       "features": [
         "データ無制限で3,278円",
-        "3GBまでなら1,078円",
+        "3GBまでなら1,078円・20GBまで2,178円",
         "Rakuten Linkアプリで国内通話無料",
         "契約期間の縛りなし"
       ],
@@ -157,6 +164,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": false,
+      "is_recommendable": true,
       "features": [
         "5GBで月990円の業界最安水準",
         "余ったデータは翌月繰り越し",
@@ -178,6 +186,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": false,
+      "is_recommendable": true,
       "features": [
         "20GBで月2,000円の高コスパ",
         "余ったデータは翌月繰り越し",
@@ -199,6 +208,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": false,
+      "is_recommendable": true,
       "features": [
         "ドコモ・au・ソフトバンク回線から選べる",
         "フリータンクでデータシェア可能",
@@ -220,6 +230,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": false,
+      "is_recommendable": true,
       "features": [
         "月990円でデータ使い放題",
         "最大1.5Mbpsで動画視聴も可能",
@@ -241,6 +252,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": false,
+      "is_recommendable": false,
       "features": [
         "ドコモ回線でMVNO最速クラス",
         "MUSICカウントフリーで音楽聴き放題",
@@ -249,7 +261,8 @@
       "demerits": [
         "2023年7月に新規受付終了済み",
         "今後のサービス拡充は期待しにくい",
-        "対面サポートが限定的"
+        "対面サポートが限定的",
+        "新規申し込みは不可"
       ],
       "official_url": "https://www.ntt.com/personal/services/mobile/one.html"
     },
@@ -262,6 +275,7 @@
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": false,
+      "is_recommendable": false,
       "features": [
         "ドコモ回線でMVNO最速クラス",
         "MUSICカウントフリーで音楽聴き放題",
@@ -270,7 +284,8 @@
       "demerits": [
         "2023年7月に新規受付終了済み",
         "今後のサービス拡充は期待しにくい",
-        "対面サポートが限定的"
+        "対面サポートが限定的",
+        "新規申し込みは不可"
       ],
       "official_url": "https://www.ntt.com/personal/services/mobile/one.html"
     }

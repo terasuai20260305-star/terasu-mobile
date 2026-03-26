@@ -7,6 +7,7 @@ export interface MobilePlan {
   family_discount_available: boolean;
   family_discount_amount: number;
   set_discount_available: boolean;
+  is_recommendable: boolean;
   features: string[];
   demerits: string[];
   official_url: string;
@@ -31,11 +32,19 @@ export interface RecommendationResult {
   reasons: string[];
   cautions: string[];
   not_recommended_if: string[];
+  note?: string;
+  second_plan?: {
+    provider_name: string;
+    plan_name: string;
+    monthly_fee: number;
+    monthly_saving: number;
+  };
 }
 
 export interface NoRecommendationResult {
   no_recommendation: true;
   message: string;
+  reasons: string[];
 }
 
 export type RecommendResult = RecommendationResult | NoRecommendationResult;

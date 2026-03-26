@@ -9,12 +9,12 @@ const QUESTIONS = [
   {
     question: "今のキャリアを教えてください",
     options: [
-      { label: "ドコモ", value: "ドコモ", icon: "📱" },
-      { label: "au", value: "au", icon: "📱" },
-      { label: "ソフトバンク", value: "ソフトバンク", icon: "📱" },
-      { label: "楽天モバイル", value: "楽天モバイル", icon: "🎯" },
+      { label: "ドコモ", value: "ドコモ", icon: "🔴" },
+      { label: "au", value: "au", icon: "🟠" },
+      { label: "ソフトバンク", value: "ソフトバンク", icon: "🔵" },
+      { label: "楽天モバイル", value: "楽天モバイル", icon: "🦅" },
       { label: "格安SIM（MVNO）", value: "格安SIM（MVNO）", icon: "💡" },
-      { label: "わからない", value: "わからない", icon: "❓" },
+      { label: "わからない", value: "わからない", icon: "🤷" },
     ],
   },
   {
@@ -48,7 +48,7 @@ interface DiagnosisFlowProps {
 
 export default function DiagnosisFlow({ onComplete }: DiagnosisFlowProps) {
   const [currentStep, setCurrentStep] = useState(0);
-  const [slideDirection, setSlideDirection] = useState<"enter" | "exit" | "idle">("enter");
+  const [slideDirection, setSlideDirection] = useState<"enter" | "exit" | "exit-back" | "idle">("enter");
   const [answers, setAnswers] = useState<string[]>([]);
 
   const handleSelect = useCallback(
@@ -79,28 +79,43 @@ export default function DiagnosisFlow({ onComplete }: DiagnosisFlowProps) {
     [answers, currentStep, onComplete]
   );
 
+  const handleBack = useCallback(() => {
+    if (currentStep <= 0) return;
+    setSlideDirection("exit-back");
+    setTimeout(() => {
+      setAnswers((prev) => prev.slice(0, -1));
+      setCurrentStep((prev) => prev - 1);
+      setSlideDirection("enter");
+    }, 300);
+  }, [currentStep]);
+
   const q = QUESTIONS[currentStep];
 
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center px-5 pt-6 pb-6">
-      <div className="w-full max-w-sm">
-        <ProgressBar current={currentStep + 1} total={QUESTIONS.length} />
-      </div>
+    <div className="flex min-h-[100dvh] flex-col bg-gray-50">
+      <ProgressBar
+        current={currentStep + 1}
+        total={QUESTIONS.length}
+        onBack={currentStep > 0 ? handleBack : undefined}
+      />
 
-      <div className="relative mt-6 flex w-full max-w-sm flex-1 items-start justify-center overflow-hidden">
+      <div className="relative flex flex-1 items-start justify-center overflow-hidden px-4 pt-4 pb-6">
         <div
-          className={`w-full transition-all duration-300 ease-out ${
+          className={`w-full max-w-sm transition-all duration-300 ease-out ${
             slideDirection === "exit"
               ? "-translate-x-full opacity-0"
-              : slideDirection === "enter"
-                ? "translate-x-0 opacity-100"
-                : ""
+              : slideDirection === "exit-back"
+                ? "translate-x-full opacity-0"
+                : slideDirection === "enter"
+                  ? "translate-x-0 opacity-100"
+                  : ""
           }`}
           onTransitionEnd={() => {
             if (slideDirection === "enter") setSlideDirection("idle");
           }}
         >
           <QuestionCard
+            questionNumber={currentStep + 1}
             question={q.question}
             subtitle={"subtitle" in q ? q.subtitle : undefined}
             options={[...q.options]}
