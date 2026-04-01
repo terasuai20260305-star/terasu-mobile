@@ -1,85 +1,157 @@
 {
-  "last_updated": "2026-03-26",
+  "updated_at": "2026-04-01",
   "plans": [
     {
+      "provider_slug": "docomo",
       "provider_name": "ドコモ",
-      "plan_name": "eximo",
-      "monthly_fee_base": 7315,
+      "plan_name": "ドコモMAX",
+      "plan_slug": "docomo_max",
+      "monthly_fee_base": 8448,
       "data_allowance_gb": null,
       "unlimited_data": true,
       "family_discount_available": true,
-      "family_discount_amount": 1100,
+      "family_discount_amount": 1210,
       "set_discount_available": true,
       "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
       "features": [
-        "データ無制限で使い放題",
-        "ドコモショップで対面サポートあり",
-        "dポイント還元率が高い"
+        "データ無制限",
+        "5分通話無料オプション選択可",
+        "Lemino・dアニメ・DAZN・NBAから2つ無料",
+        "Amazonプライム最大6ヶ月無料（600円/月）",
+        "海外ローミング最大30GB無料",
+        "ドコモショップサポートあり",
+        "みんなドコモ割・光セット割など全割引対象"
       ],
       "demerits": [
-        "月額料金が高め（割引なしで7,315円/月）",
-        "ライトユーザーには割高",
-        "2年契約の縛りがある場合がある"
+        "割引なしでは月8,448円と非常に高い",
+        "みんなドコモ割は3回線以上でないと最大割引にならない",
+        "光回線セット割はドコモ光契約が別途必要（月4,400円〜）",
+        "家族や光回線の条件が整わないとコスパが悪い"
       ],
-      "official_url": "https://www.docomo.ne.jp/charge/eximo/",
-      "campaigns": [
-        {
-          "name": "eximo お試しキャンペーン",
-          "type": "point",
-          "amount": 3000,
-          "duration_months": 1,
-          "end_date": null,
-          "conditions": "新規・MNP契約"
-        }
-      ],
-      "point_site": {
-        "site_name": "ハピタス",
-        "reward": 3000,
-        "url": "https://hapitas.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.docomo.ne.jp/charge/docomo_max/"
     },
     {
+      "provider_slug": "docomo",
       "provider_name": "ドコモ",
-      "plan_name": "irumo（3GB）",
-      "monthly_fee_base": 2167,
-      "data_allowance_gb": 3,
+      "plan_name": "ドコモmini（4GB）",
+      "plan_slug": "docomo_mini_4gb",
+      "monthly_fee_base": 2750,
+      "data_allowance_gb": 4,
       "unlimited_data": false,
       "family_discount_available": false,
       "family_discount_amount": 0,
       "set_discount_available": true,
       "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
       "features": [
-        "ドコモ回線の安定した通信品質",
-        "ドコモショップで対面サポートあり",
-        "dカード支払いで187円割引"
+        "ドコモ品質の通信",
+        "ドコモショップサポートあり",
+        "Amazonプライム最大3ヶ月無料（600円/月）",
+        "dカード払いで割引あり"
       ],
       "demerits": [
-        "ドコモ光セット割がないと割高",
-        "データ超過後は300kbpsに制限",
-        "家族割のカウント対象外"
+        "みんなドコモ割（家族割）の対象外",
+        "4GB超過後は最大128kbpsに速度制限",
+        "追加データは1GB・1,100円と高額",
+        "ドコモメール利用には別途330円/月のオプション必要",
+        "割引条件を満たさないと月2,750円でahamoより高い"
       ],
-      "official_url": "https://www.docomo.ne.jp/charge/irumo/",
-      "campaigns": [
-        {
-          "name": "irumo オンライン限定 dポイント進呈",
-          "type": "point",
-          "amount": 3300,
-          "duration_months": 1,
-          "end_date": null,
-          "conditions": "他社からのMNP"
-        }
-      ],
-      "point_site": {
-        "site_name": "ハピタス",
-        "reward": 2000,
-        "url": "https://hapitas.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.docomo.ne.jp/charge/docomo_mini/"
     },
     {
+      "provider_slug": "docomo",
+      "provider_name": "ドコモ",
+      "plan_name": "ドコモmini（10GB）",
+      "plan_slug": "docomo_mini_10gb",
+      "monthly_fee_base": 3850,
+      "data_allowance_gb": 10,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": true,
+      "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
+      "features": [
+        "ドコモ品質の通信",
+        "ドコモショップサポートあり",
+        "Amazonプライム最大3ヶ月無料（600円/月）",
+        "dカード払いで割引あり"
+      ],
+      "demerits": [
+        "みんなドコモ割（家族割）の対象外",
+        "10GB超過後は最大128kbpsに速度制限",
+        "ドコモメール利用には別途330円/月のオプション必要",
+        "割引なしでは月3,850円とahamoより高い"
+      ],
+      "official_url": "https://www.docomo.ne.jp/charge/docomo_mini/"
+    },
+    {
+      "provider_slug": "docomo",
+      "provider_name": "ドコモ",
+      "plan_name": "ドコモポイ活MAX",
+      "plan_slug": "docomo_poikatsu_max",
+      "monthly_fee_base": 11748,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "family_discount_available": true,
+      "family_discount_amount": 1210,
+      "set_discount_available": true,
+      "is_recommendable": false,
+      "quality_score": 9,
+      "trust_score": 9,
+      "features": [
+        "データ無制限",
+        "dカード決済でdポイント最大還元",
+        "MAXプラン特典（DAZN・NBA等2つ無料）"
+      ],
+      "demerits": [
+        "月額が11,748円と非常に高い",
+        "ポイ活還元キャンペーンが2026年4月30日終了",
+        "5月以降はdカードGOLD5%・PLATINUM10%の通常還元のみ",
+        "dカードとd払い設定が必須",
+        "一般ユーザーにはコスパが悪い"
+      ],
+      "official_url": "https://www.docomo.ne.jp/charge/docomo_poikatsu_max/"
+    },
+    {
+      "provider_slug": "docomo",
+      "provider_name": "ドコモ",
+      "plan_name": "ahamo",
+      "plan_slug": "ahamo",
+      "monthly_fee_base": 2970,
+      "data_allowance_gb": 30,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
+      "features": [
+        "月2,970円で30GB（業界最安水準）",
+        "5分以内通話無料込み",
+        "海外20GBローミング無料",
+        "最低利用期間なし・事務手数料なし",
+        "Amazonプライム最大3ヶ月無料"
+      ],
+      "demerits": [
+        "みんなドコモ割・光セット割・dカード割すべて対象外",
+        "ドコモから変更すると契約年数がリセット（dポイントステージ影響）",
+        "店舗サポートなし（有料サポートは3,300円）",
+        "ドコモメール利用には別途330円/月",
+        "1年以内解約で1,100円の契約解除料"
+      ],
+      "official_url": "https://ahamo.com/"
+    },
+    {
+      "provider_slug": "au",
       "provider_name": "au",
       "plan_name": "使い放題MAX 5G/4G",
+      "plan_slug": "max",
       "monthly_fee_base": 7238,
       "data_allowance_gb": null,
       "unlimited_data": true,
@@ -87,6 +159,8 @@
       "family_discount_amount": 1100,
       "set_discount_available": true,
       "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
       "features": [
         "データ無制限で使い放題",
         "テザリング30GBまで無料",
@@ -97,34 +171,22 @@
         "テザリングは30GB上限あり",
         "格安SIMと比べると割高"
       ],
-      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-unlimited-max/",
-      "campaigns": [
-        {
-          "name": "au Online Shop お得割",
-          "type": "discount",
-          "amount": 22000,
-          "duration_months": 1,
-          "end_date": null,
-          "conditions": "MNP + 対象端末購入"
-        }
-      ],
-      "point_site": {
-        "site_name": "モッピー",
-        "reward": 5000,
-        "url": "https://moppy.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-unlimited-max/"
     },
     {
+      "provider_slug": "au",
       "provider_name": "au",
       "plan_name": "スマホミニプラン 5G/4G（〜4GB）",
-      "monthly_fee_base": 3278,
+      "plan_slug": "mini",
+      "monthly_fee_base": 3465,
       "data_allowance_gb": 4,
       "unlimited_data": false,
       "family_discount_available": true,
       "family_discount_amount": 550,
       "set_discount_available": true,
       "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
       "features": [
         "使った分だけの段階制料金",
         "au回線の安定した通信品質",
@@ -135,80 +197,156 @@
         "割引がないとコスパが悪い",
         "格安SIMと比べると割高"
       ],
-      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-smahomini/",
-      "campaigns": [],
-      "point_site": {
-        "site_name": "モッピー",
-        "reward": 3000,
-        "url": "https://moppy.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.au.com/mobile/charge/smartphone/plan-smahomini/"
     },
     {
+      "provider_slug": "au",
+      "provider_name": "au",
+      "plan_name": "povo2.0",
+      "plan_slug": "povo",
+      "monthly_fee_base": 0,
+      "data_allowance_gb": 0,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "基本料0円でトッピングで自由に組み立て",
+        "au回線で安定した通信",
+        "使わない月は0円で維持可能"
+      ],
+      "demerits": [
+        "トッピングなしでは128kbpsに制限",
+        "オンライン専用で店舗サポートなし",
+        "180日間トッピング未購入で利用停止の可能性"
+      ],
+      "official_url": "https://povo.jp/"
+    },
+    {
+      "provider_slug": "softbank",
       "provider_name": "ソフトバンク",
-      "plan_name": "メリハリ無制限+",
-      "monthly_fee_base": 7425,
+      "plan_name": "ペイトク無制限",
+      "plan_slug": "softbank_paytoku",
+      "monthly_fee_base": 9625,
+      "data_allowance_gb": null,
+      "unlimited_data": true,
+      "speed_limit_note": "テザリング合計200GB/月超で最大4.5Mbpsに速度制御",
+      "family_discount_available": true,
+      "family_discount_amount": 1210,
+      "set_discount_available": true,
+      "monthly_fee_min": 7128,
+      "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
+      "features": [
+        "データ無制限",
+        "PayPay利用で最初3ヶ月最大+10%還元（上限4,000円/月）",
+        "以降ずっと+5%還元",
+        "YouTube Premium 2ヶ月無料",
+        "データシェア50GBまで可",
+        "家族割・光セット割・PayPayカード割すべて対象"
+      ],
+      "demerits": [
+        "割引なしでは月9,625円と非常に高い",
+        "PayPayの利用が前提のプラン設計",
+        "テザリング合計200GB超で速度制御あり",
+        "PayPayカード割は別途カード申し込みが必要",
+        "家族割・光セット割なしではコスパが悪い"
+      ],
+      "official_url": "https://www.softbank.jp/mobile/price_plan/data/paytoku/"
+    },
+    {
+      "provider_slug": "softbank",
+      "provider_name": "ソフトバンク",
+      "plan_name": "メリハリ無制限＋",
+      "plan_slug": "softbank_merihari",
+      "monthly_fee_base": 7238,
       "data_allowance_gb": null,
       "unlimited_data": true,
       "family_discount_available": true,
       "family_discount_amount": 1210,
       "set_discount_available": true,
+      "monthly_fee_min": 4741,
       "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
       "features": [
-        "データ無制限で使い放題",
-        "テザリング50GBまで無料",
-        "PayPayポイント還元あり"
+        "データ無制限",
+        "シンプルな無制限プラン",
+        "YouTube Premium 2ヶ月無料",
+        "家族割・光セット割・PayPayカード割すべて対象"
       ],
       "demerits": [
-        "月額料金が3キャリアで最も高い（7,425円/月）",
-        "3GB以下でも自動割引は1,650円のみ",
-        "格安SIMと比べると大幅に割高"
+        "割引なしでは月7,238円と高い",
+        "家族割・光セット割がないとコスパが悪い",
+        "ペイトクと比べPayPayポイント還元が少ない",
+        "通話は従量制（22円/30秒）"
       ],
-      "official_url": "https://www.softbank.jp/mobile/price-plan/meriharimuseigen-plus/",
-      "campaigns": [
-        {
-          "name": "オンラインショップ割",
-          "type": "discount",
-          "amount": 21984,
-          "duration_months": 1,
-          "end_date": null,
-          "conditions": "MNP + 対象端末購入"
-        }
-      ],
-      "point_site": {
-        "site_name": "ハピタス",
-        "reward": 4000,
-        "url": "https://hapitas.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.softbank.jp/mobile/price_plan/data/merihari-unlimited-plus/"
     },
     {
+      "provider_slug": "softbank",
       "provider_name": "ソフトバンク",
-      "plan_name": "ミニフィットプラン+（〜3GB）",
+      "plan_name": "ミニフィットプラン＋",
+      "plan_slug": "softbank_minifit",
       "monthly_fee_base": 3278,
+      "monthly_fee_max": 5478,
       "data_allowance_gb": 3,
       "unlimited_data": false,
       "family_discount_available": true,
-      "family_discount_amount": 0,
+      "family_discount_amount": 1210,
       "set_discount_available": true,
+      "monthly_fee_min": 781,
       "is_recommendable": true,
+      "quality_score": 9,
+      "trust_score": 9,
       "features": [
-        "使った分だけの段階制料金",
-        "1GB以下なら2,178円で使える",
-        "ソフトバンクショップで対面サポートあり"
+        "使った分だけ支払う3段階制",
+        "データ使用量が少ない月はお得",
+        "家族割・光セット割対象"
       ],
       "demerits": [
-        "3GB超えるとメリハリ無制限+の方が得",
-        "家族割はカウントのみで割引なし",
-        "格安SIMと比べると割高"
+        "3GBを超えると利用不可（速度制限）",
+        "2〜3GBになると月5,478円でahamoより高い",
+        "毎月の料金が変動する",
+        "通話は従量制（22円/30秒）",
+        "3GB超過後の速度制限が非常に厳しい"
       ],
-      "official_url": "https://www.softbank.jp/mobile/price-plan/minifitplan-plus/",
-      "campaigns": [],
-      "point_site": null
+      "official_url": "https://www.softbank.jp/mobile/price_plan/data/minifit-plan-plus/"
     },
     {
+      "provider_slug": "softbank",
+      "provider_name": "ソフトバンク",
+      "plan_name": "スマホデビュープラン＋",
+      "plan_slug": "softbank_debut",
+      "monthly_fee_base": 2266,
+      "data_allowance_gb": 4,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "is_recommendable": false,
+      "quality_score": 9,
+      "trust_score": 9,
+      "features": [
+        "初めてスマホ向けの専用プラン",
+        "1年おトク割＋で最初1年間1,078円"
+      ],
+      "demerits": [
+        "ガラケーからの乗り換え・機種変更限定（スマホからの乗り換え不可）",
+        "14ヶ月目以降は2,266円になる",
+        "一般的な乗り換えには使えない"
+      ],
+      "official_url": "https://www.softbank.jp/mobile/price_plan/data/sumaho-debut-plan-plus/"
+    },
+    {
+      "provider_slug": "rakuten",
       "provider_name": "楽天モバイル",
       "plan_name": "Rakuten最強プラン",
+      "plan_slug": "saikyo",
       "monthly_fee_base": 3278,
       "data_allowance_gb": null,
       "unlimited_data": true,
@@ -216,6 +354,8 @@
       "family_discount_amount": 110,
       "set_discount_available": false,
       "is_recommendable": true,
+      "quality_score": 6,
+      "trust_score": 7,
       "features": [
         "データ無制限で3,278円",
         "3GBまでなら1,078円・20GBまで2,178円",
@@ -227,33 +367,187 @@
         "対面サポート店舗が大手3社より少ない",
         "パートナー回線エリアでは速度制限あり"
       ],
-      "official_url": "https://network.mobile.rakuten.co.jp/fee/saikyo-plan/",
-      "campaigns": [
-        {
-          "name": "楽天ポイント最大13,000pt還元",
-          "type": "point",
-          "amount": 13000,
-          "end_date": null,
-          "conditions": "初めての申し込み + Rakuten Link利用"
-        },
-        {
-          "name": "三木谷キャンペーン（紹介）",
-          "type": "point",
-          "amount": 14000,
-          "end_date": null,
-          "conditions": "紹介URL経由での申し込み"
-        }
-      ],
-      "point_site": {
-        "site_name": "ハピタス",
-        "reward": 5000,
-        "url": "https://hapitas.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://network.mobile.rakuten.co.jp/fee/saikyo-plan/"
     },
     {
+      "provider_slug": "uqmobile",
+      "provider_name": "UQモバイル",
+      "plan_name": "コミコミプラン（20GB）",
+      "plan_slug": "komikomi",
+      "monthly_fee_base": 3278,
+      "data_allowance_gb": 20,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": true,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "au回線で安定した通信品質",
+        "10分以内の国内通話無料込み",
+        "データ超過後も1Mbpsで使える"
+      ],
+      "demerits": [
+        "20GBを超えると速度制限",
+        "割引適用にはauひかり等が必要",
+        "大手キャリアの店舗と比べるとサポート拠点が少ない"
+      ],
+      "official_url": "https://www.uqwimax.jp/mobile/plan/komikomi/"
+    },
+    {
+      "provider_slug": "uqmobile",
+      "provider_name": "UQモバイル",
+      "plan_name": "ミニミニプラン（4GB）",
+      "plan_slug": "minimini",
+      "monthly_fee_base": 2365,
+      "data_allowance_gb": 4,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": true,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "au回線で安定した通信品質",
+        "自宅セット割で1,078円まで下がる",
+        "余ったデータは翌月繰り越し"
+      ],
+      "demerits": [
+        "4GBを超えると300kbpsに制限",
+        "割引なしだと2,365円でやや割高",
+        "10分通話オプションが別途880円"
+      ],
+      "official_url": "https://www.uqwimax.jp/mobile/plan/minimini/"
+    },
+    {
+      "provider_slug": "ymobile",
+      "provider_name": "Y!mobile",
+      "plan_name": "シンプル2 M（20GB）",
+      "plan_slug": "simple2m",
+      "monthly_fee_base": 4015,
+      "data_allowance_gb": 20,
+      "unlimited_data": false,
+      "family_discount_available": true,
+      "family_discount_amount": 1100,
+      "set_discount_available": true,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "ソフトバンク回線で安定した通信",
+        "家族割で2,915円まで下がる",
+        "Yahoo!プレミアム特典付き"
+      ],
+      "demerits": [
+        "割引なしだと4,015円でやや割高",
+        "20GBを超えると1Mbpsに制限",
+        "シンプル2 Sよりデータが多い分高い"
+      ],
+      "official_url": "https://www.ymobile.jp/plan/simple2/"
+    },
+    {
+      "provider_slug": "ymobile",
+      "provider_name": "Y!mobile",
+      "plan_name": "シンプル2 S（4GB）",
+      "plan_slug": "simple2s",
+      "monthly_fee_base": 2365,
+      "data_allowance_gb": 4,
+      "unlimited_data": false,
+      "family_discount_available": true,
+      "family_discount_amount": 1100,
+      "set_discount_available": true,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "ソフトバンク回線で安定した通信",
+        "家族割で1,265円まで下がる",
+        "全国のY!mobileショップで対面サポート"
+      ],
+      "demerits": [
+        "4GBを超えると300kbpsに制限",
+        "割引なしだとMVNOより割高",
+        "データ繰り越しは翌月まで"
+      ],
+      "official_url": "https://www.ymobile.jp/plan/simple2/"
+    },
+    {
+      "provider_slug": "linemo",
+      "provider_name": "LINEMO",
+      "plan_name": "LINEMOベストプラン",
+      "plan_slug": "linemo_bestplan",
+      "monthly_fee_base": 990,
+      "monthly_fee_max": 2090,
+      "data_allowance_gb": 10,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "LINEギガフリー（LINEのトーク・通話がデータ消費ゼロ）",
+        "3GBまで月990円と業界最安水準",
+        "ソフトバンク回線で通信品質が高い",
+        "テザリング無料",
+        "eSIM対応",
+        "フィルタリング無料",
+        "国際ローミング対応（月0円・別途通信料）",
+        "割引なしで安い（条件不問）"
+      ],
+      "demerits": [
+        "3GBを超えると自動的に2,090円に上がる（段階制の罠）",
+        "10GB超過後は速度が300kbpsに低下",
+        "家族割・光セット割など一切割引なし",
+        "オンライン専用（店舗サポートなし）",
+        "5分通話無料は別途550円/月のオプションが必要",
+        "端末販売なし（SIMのみ）",
+        "当月解約で解除料990円"
+      ],
+      "official_url": "https://www.linemo.jp/plan/"
+    },
+    {
+      "provider_slug": "linemo",
+      "provider_name": "LINEMO",
+      "plan_name": "LINEMOベストプランV",
+      "plan_slug": "linemo_bestplan_v",
+      "monthly_fee_base": 2970,
+      "data_allowance_gb": 30,
+      "unlimited_data": false,
+      "family_discount_available": false,
+      "family_discount_amount": 0,
+      "set_discount_available": false,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "30GBで月2,970円（ahamo同等価格）",
+        "5分以内の国内通話かけ放題が無料で付属",
+        "LINEギガフリー（LINE使い放題）",
+        "ソフトバンク回線で通信品質が高い",
+        "テザリング無料",
+        "eSIM対応",
+        "30GB超過後も1Mbpsで利用継続可能",
+        "通話定額for LINEMOベストプランV（月1,100円→キャンペーン中550円）も選択可"
+      ],
+      "demerits": [
+        "30GBを超えると速度が1Mbpsに低下",
+        "45GB超過後は128kbpsに大幅低下",
+        "家族割・光セット割など一切割引なし",
+        "オンライン専用（店舗サポートなし）",
+        "端末販売なし（SIMのみ）",
+        "当月解約で解除料990円"
+      ],
+      "official_url": "https://www.linemo.jp/plan/"
+    },
+    {
+      "provider_slug": "iijmio",
       "provider_name": "IIJmio",
       "plan_name": "ギガプラン（5GB）",
+      "plan_slug": "giga5",
       "monthly_fee_base": 990,
       "data_allowance_gb": 5,
       "unlimited_data": false,
@@ -261,6 +555,8 @@
       "family_discount_amount": 0,
       "set_discount_available": false,
       "is_recommendable": true,
+      "quality_score": 6,
+      "trust_score": 7,
       "features": [
         "5GBで月990円の業界最安水準",
         "余ったデータは翌月繰り越し",
@@ -271,35 +567,13 @@
         "対面サポートがほぼない",
         "通話料は別途11円/30秒"
       ],
-      "official_url": "https://www.iijmio.jp/gigaplan/",
-      "campaigns": [
-        {
-          "name": "月額料金割引（6ヶ月間）",
-          "type": "discount",
-          "amount": 440,
-          "duration_months": 6,
-          "end_date": "2026-05-31",
-          "conditions": "新規・MNP"
-        },
-        {
-          "name": "初期費用割引",
-          "type": "discount",
-          "amount": 1650,
-          "duration_months": 1,
-          "end_date": "2026-05-31",
-          "conditions": "新規・MNP"
-        }
-      ],
-      "point_site": {
-        "site_name": "モッピー",
-        "reward": 2000,
-        "url": "https://moppy.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.iijmio.jp/gigaplan/"
     },
     {
+      "provider_slug": "iijmio",
       "provider_name": "IIJmio",
       "plan_name": "ギガプラン（20GB）",
+      "plan_slug": "giga20",
       "monthly_fee_base": 2000,
       "data_allowance_gb": 20,
       "unlimited_data": false,
@@ -307,6 +581,8 @@
       "family_discount_amount": 0,
       "set_discount_available": false,
       "is_recommendable": true,
+      "quality_score": 6,
+      "trust_score": 7,
       "features": [
         "20GBで月2,000円の高コスパ",
         "余ったデータは翌月繰り越し",
@@ -317,35 +593,13 @@
         "対面サポートがほぼない",
         "通話料は別途11円/30秒"
       ],
-      "official_url": "https://www.iijmio.jp/gigaplan/",
-      "campaigns": [
-        {
-          "name": "月額料金割引（6ヶ月間）",
-          "type": "discount",
-          "amount": 440,
-          "duration_months": 6,
-          "end_date": "2026-05-31",
-          "conditions": "新規・MNP"
-        },
-        {
-          "name": "初期費用割引",
-          "type": "discount",
-          "amount": 1650,
-          "duration_months": 1,
-          "end_date": "2026-05-31",
-          "conditions": "新規・MNP"
-        }
-      ],
-      "point_site": {
-        "site_name": "モッピー",
-        "reward": 2000,
-        "url": "https://moppy.jp/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://www.iijmio.jp/gigaplan/"
     },
     {
+      "provider_slug": "mineo",
       "provider_name": "mineo",
       "plan_name": "マイピタ（5GB）",
+      "plan_slug": "maipita5",
       "monthly_fee_base": 1518,
       "data_allowance_gb": 5,
       "unlimited_data": false,
@@ -353,6 +607,8 @@
       "family_discount_amount": 0,
       "set_discount_available": false,
       "is_recommendable": true,
+      "quality_score": 6,
+      "trust_score": 7,
       "features": [
         "ドコモ・au・ソフトバンク回線から選べる",
         "フリータンクでデータシェア可能",
@@ -363,27 +619,13 @@
         "対面サポート店舗が少ない",
         "通話料は別途22円/30秒"
       ],
-      "official_url": "https://mineo.jp/price/",
-      "campaigns": [
-        {
-          "name": "マイピタまるっと990円キャンペーン",
-          "type": "discount",
-          "amount": 528,
-          "duration_months": 6,
-          "end_date": "2026-06-03",
-          "conditions": "新規・MNP"
-        }
-      ],
-      "point_site": {
-        "site_name": "価格.com",
-        "reward": 3000,
-        "url": "https://kakaku.com/",
-        "last_updated": "2026-03-26"
-      }
+      "official_url": "https://mineo.jp/price/"
     },
     {
+      "provider_slug": "mineo",
       "provider_name": "mineo",
       "plan_name": "マイそく（スタンダード）",
+      "plan_slug": "mysoku",
       "monthly_fee_base": 990,
       "data_allowance_gb": null,
       "unlimited_data": true,
@@ -391,6 +633,8 @@
       "family_discount_amount": 0,
       "set_discount_available": false,
       "is_recommendable": true,
+      "quality_score": 4,
+      "trust_score": 7,
       "features": [
         "月990円でデータ使い放題",
         "最大1.5Mbpsで動画視聴も可能",
@@ -401,64 +645,7 @@
         "平日12時台は32kbpsに制限",
         "高画質動画やオンラインゲームには不向き"
       ],
-      "official_url": "https://mineo.jp/price/mysoku/",
-      "campaigns": [],
-      "point_site": {
-        "site_name": "価格.com",
-        "reward": 2000,
-        "url": "https://kakaku.com/",
-        "last_updated": "2026-03-26"
-      }
-    },
-    {
-      "provider_name": "OCNモバイルONE",
-      "plan_name": "3GBコース",
-      "monthly_fee_base": 990,
-      "data_allowance_gb": 3,
-      "unlimited_data": false,
-      "family_discount_available": false,
-      "family_discount_amount": 0,
-      "set_discount_available": false,
-      "is_recommendable": false,
-      "features": [
-        "ドコモ回線でMVNO最速クラス",
-        "MUSICカウントフリーで音楽聴き放題",
-        "初月無料"
-      ],
-      "demerits": [
-        "2023年7月に新規受付終了済み",
-        "今後のサービス拡充は期待しにくい",
-        "対面サポートが限定的",
-        "新規申し込みは不可"
-      ],
-      "official_url": "https://www.ntt.com/personal/services/mobile/one.html",
-      "campaigns": [],
-      "point_site": null
-    },
-    {
-      "provider_name": "OCNモバイルONE",
-      "plan_name": "10GBコース",
-      "monthly_fee_base": 1760,
-      "data_allowance_gb": 10,
-      "unlimited_data": false,
-      "family_discount_available": false,
-      "family_discount_amount": 0,
-      "set_discount_available": false,
-      "is_recommendable": false,
-      "features": [
-        "ドコモ回線でMVNO最速クラス",
-        "MUSICカウントフリーで音楽聴き放題",
-        "余ったデータは翌月繰り越し"
-      ],
-      "demerits": [
-        "2023年7月に新規受付終了済み",
-        "今後のサービス拡充は期待しにくい",
-        "対面サポートが限定的",
-        "新規申し込みは不可"
-      ],
-      "official_url": "https://www.ntt.com/personal/services/mobile/one.html",
-      "campaigns": [],
-      "point_site": null
+      "official_url": "https://mineo.jp/price/mysoku/"
     }
   ]
 }
