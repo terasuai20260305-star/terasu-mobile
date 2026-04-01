@@ -424,54 +424,97 @@
     {
       "provider_slug": "ymobile",
       "provider_name": "Y!mobile",
-      "plan_name": "シンプル2 M（20GB）",
-      "plan_slug": "simple2m",
-      "monthly_fee_base": 4015,
+      "plan_name": "シンプル3 S",
+      "plan_slug": "ymobile_simple3_s",
+      "monthly_fee_base": 3058,
+      "data_allowance_gb": 4,
+      "unlimited_data": false,
+      "family_discount_available": true,
+      "family_discount_amount": 550,
+      "set_discount_available": true,
+      "monthly_fee_min": 858,
+      "is_recommendable": true,
+      "quality_score": 8,
+      "trust_score": 8,
+      "features": [
+        "ソフトバンク回線で通信品質が高い",
+        "ドコモ・auより安い水準",
+        "テザリング無料",
+        "eSIM対応",
+        "おうち割・家族割適用でさらに安くなる",
+        "店舗サポートあり"
+      ],
+      "demerits": [
+        "4GBを超えると速度制限",
+        "おうち割と家族割は同時適用不可",
+        "PayPayカードゴールドは年会費11,000円が別途必要",
+        "通話は従量制（22円/30秒）",
+        "SoftBank光・Air加入が割引条件になる場合がある"
+      ],
+      "official_url": "https://www.ymobile.jp/plan/"
+    },
+    {
+      "provider_slug": "ymobile",
+      "provider_name": "Y!mobile",
+      "plan_name": "シンプル3 M",
+      "plan_slug": "ymobile_simple3_m",
+      "monthly_fee_base": 4158,
       "data_allowance_gb": 20,
       "unlimited_data": false,
       "family_discount_available": true,
       "family_discount_amount": 1100,
       "set_discount_available": true,
+      "monthly_fee_min": 1958,
       "is_recommendable": true,
       "quality_score": 8,
       "trust_score": 8,
       "features": [
-        "ソフトバンク回線で安定した通信",
-        "家族割で2,915円まで下がる",
-        "Yahoo!プレミアム特典付き"
+        "20GBで月1,958円〜（割引適用時）",
+        "ソフトバンク回線で通信品質が高い",
+        "テザリング無料",
+        "eSIM対応",
+        "店舗サポートあり",
+        "家族割引対象"
       ],
       "demerits": [
-        "割引なしだと4,015円でやや割高",
-        "20GBを超えると1Mbpsに制限",
-        "シンプル2 Sよりデータが多い分高い"
+        "20GB超過後は速度制限",
+        "おうち割と家族割は同時適用不可",
+        "通話は従量制（22円/30秒）",
+        "PayPayカードゴールドは年会費11,000円が別途必要"
       ],
-      "official_url": "https://www.ymobile.jp/plan/simple2/"
+      "official_url": "https://www.ymobile.jp/plan/"
     },
     {
       "provider_slug": "ymobile",
       "provider_name": "Y!mobile",
-      "plan_name": "シンプル2 S（4GB）",
-      "plan_slug": "simple2s",
-      "monthly_fee_base": 2365,
-      "data_allowance_gb": 4,
+      "plan_name": "シンプル3 L",
+      "plan_slug": "ymobile_simple3_l",
+      "monthly_fee_base": 5258,
+      "data_allowance_gb": 30,
       "unlimited_data": false,
       "family_discount_available": true,
       "family_discount_amount": 1100,
       "set_discount_available": true,
+      "monthly_fee_min": 3058,
       "is_recommendable": true,
       "quality_score": 8,
       "trust_score": 8,
       "features": [
-        "ソフトバンク回線で安定した通信",
-        "家族割で1,265円まで下がる",
-        "全国のY!mobileショップで対面サポート"
+        "30GBで10分以内かけ放題込み",
+        "通話が多い人に最適",
+        "ソフトバンク回線で通信品質が高い",
+        "テザリング無料",
+        "eSIM対応",
+        "店舗サポートあり",
+        "家族割引対象"
       ],
       "demerits": [
-        "4GBを超えると300kbpsに制限",
-        "割引なしだとMVNOより割高",
-        "データ繰り越しは翌月まで"
+        "30GB超過後は速度制限",
+        "おうち割と家族割は同時適用不可",
+        "PayPayカードゴールドは年会費11,000円が別途必要",
+        "かけ放題は10分以内の制限あり"
       ],
-      "official_url": "https://www.ymobile.jp/plan/simple2/"
+      "official_url": "https://www.ymobile.jp/plan/"
     },
     {
       "provider_slug": "linemo",
